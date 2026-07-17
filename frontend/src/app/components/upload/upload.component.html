@@ -1,0 +1,13 @@
+<section class="upload-card">
+  <h2>Upload PDF</h2>
+  <p class="hint">Upload a document, then ask questions in the chat.</p>
+  <label class="file-picker">
+    <input type="file" accept="application/pdf,.pdf" (change)="onFileSelected($event)" [disabled]="uploading" />
+    <span>Choose PDF</span>
+  </label>
+  <button type="button" class="primary-btn" (click)="upload()" [disabled]="uploading || !selectedFile">
+    {{ uploading ? 'Processing...' : 'Upload & Index' }}
+  </button>
+  <p class="status success" *ngIf="message">{{ message }}</p>
+  <p class="status error" *ngIf="error">{{ error }}</p>
+</section>

@@ -1,0 +1,11 @@
+.upload-card { background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:1.25rem; }
+h2 { margin:0 0 .35rem; font-size:1.1rem; }
+.hint { margin:0 0 1rem; color:#64748b; font-size:.9rem; }
+.file-picker { display:inline-flex; margin-bottom:.75rem; cursor:pointer; }
+.file-picker input { display:none; }
+.file-picker span { padding:.55rem .9rem; border-radius:10px; background:#f1f5f9; font-weight:600; }
+.primary-btn { display:block; width:100%; border:none; border-radius:10px; padding:.7rem 1rem; background:#2563eb; color:#fff; font-weight:600; cursor:pointer; }
+.primary-btn:disabled { opacity:.6; cursor:not-allowed; }
+.status { margin:.75rem 0 0; font-size:.85rem; }
+.status.success { color:#15803d; }
+.status.error { color:#b91c1c; }

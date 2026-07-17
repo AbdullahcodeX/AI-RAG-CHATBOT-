@@ -1,0 +1,18 @@
+<section class="chat-card">
+  <header>
+    <h2>Chat</h2>
+    <span class="badge" [class.ready]="hasDocuments">{{ hasDocuments ? 'Documents ready' : 'Waiting for PDF' }}</span>
+  </header>
+  <div class="messages">
+    <div class="message" *ngFor="let message of messages" [ngClass]="message.role">
+      <div class="bubble">{{ message.content }}</div>
+      <div class="sources" *ngIf="message.sources?.length">Sources: {{ message.sources?.join(', ') }}</div>
+    </div>
+    <div class="message assistant" *ngIf="loading"><div class="bubble typing">Thinking...</div></div>
+  </div>
+  <p class="error" *ngIf="error">{{ error }}</p>
+  <div class="composer">
+    <textarea rows="3" [(ngModel)]="question" placeholder="Ask a question about your uploaded PDF..." (keydown)="onKeyDown($event)" [disabled]="loading"></textarea>
+    <button type="button" class="send-btn" (click)="send()" [disabled]="loading || !question.trim()">Send</button>
+  </div>
+</section>

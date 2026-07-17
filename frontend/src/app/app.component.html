@@ -1,0 +1,25 @@
+<div class="page">
+  <header class="topbar">
+    <div>
+      <h1>Doc RAG Chat</h1>
+      <p>Upload PDFs and chat with Gemini-powered answers grounded in your documents.</p>
+    </div>
+    <button type="button" class="ghost-btn" (click)="clearSession()" [disabled]="loadingSession">New Session</button>
+  </header>
+  <p class="banner error" *ngIf="error">{{ error }}</p>
+  <div class="layout" *ngIf="!loadingSession; else loading">
+    <aside class="sidebar">
+      <app-upload [sessionId]="sessionId" (uploaded)="onUploaded()"></app-upload>
+      <section class="docs-card" *ngIf="status">
+        <h3>Indexed Documents</h3>
+        <p *ngIf="!status.filenames.length" class="muted">No documents yet.</p>
+        <ul *ngIf="status.filenames.length"><li *ngFor="let filename of status.filenames">{{ filename }}</li></ul>
+        <p class="muted">{{ status.chunk_count }} text chunks indexed</p>
+      </section>
+    </aside>
+    <main class="chat-panel">
+      <app-chat [sessionId]="sessionId" [hasDocuments]="hasDocuments"></app-chat>
+    </main>
+  </div>
+  <ng-template #loading><div class="loading">Starting session...</div></ng-template>
+</div>
