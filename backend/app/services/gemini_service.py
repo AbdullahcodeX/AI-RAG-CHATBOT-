@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from google import genai
-from app.config import CHAT_MODEL, E
+from app.config import CHAT_MODEL, 
 load_dotenv()
 
 
