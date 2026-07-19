@@ -1,6 +1,6 @@
 import shutil
 import uuid
-from pathlib imp
+from pathlib i
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import CORS_ORIGINS, UPLOADS_DIR
