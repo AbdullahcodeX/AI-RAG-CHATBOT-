@@ -1,4 +1,4 @@
-from pathli
+from pathl
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 UPLOADS_DIR = BASE_DIR / "uploads"
