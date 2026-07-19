@@ -1,4 +1,4 @@
-from app.config import CHUNK_OVERLAP, CHUNK_SIZE
+from app.config import CHUNK_OVERLAP, CHUNK_SI
 
 
 def chunk_text(text: str, chunk_size: int = CHUNK_SIZE, overlap: int = CHUNK_OVERLAP) -> list[str]:
